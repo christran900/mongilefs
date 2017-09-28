@@ -1,6 +1,6 @@
 # I. Giới thiệu
-<ul>
   Mogilefs là một phân mêm mã nguồn mở của Danga. Các thuộc tính của nó bao gồm:
+ 
   * Application level: MogileFS hoạt động ở tần ứng dụng, không cần cai thêm cac modul cho hệ thống. Dễ dàng trong việc triển khai 
   * No single point of failure: 3 thành phần của MongileFS có thê được cài đặt ở nhiều máy (storage node,trackers, tracker's database), có thể chạy trackers trên cung một máy với storage node. Yêu cầu tối thiểu co 2 máy
   * automatic file replication: tuỳ thuộc vào lớp, tập tin sẽ được nhân bản ở các node, với số nhân bản tuỳ vào thiết lập cua lớp. Việc phân chia ra các lớp cho phép xác định mức độ quan trọng va mức độ sử dụng của tâp tin trong lớp đó.
@@ -13,5 +13,5 @@
  PUT/GET (HTTP Protocol)
  
 * Chưa co tính linh động: Bởi vì MogileFS có một số thành phân chỉ hoạt động tron môi trường Linux
-</ul>
+
  
