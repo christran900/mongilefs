@@ -55,7 +55,7 @@ Tạo database và người dùng tương tự trên cả 2 máy:
 		mysql> GRANT ALL ON mogilefs.* TO 'mogile'@'%';
 		mysql> FLUSH PRIVILEGES;
 
-Trên máy A:
+		Trên máy A:
 	        mysql> show master status;
 		+------------------------+-----------+---------------------+-------------------------+
 		| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
@@ -65,7 +65,7 @@ Trên máy A:
 		1 row in set (0.00 sec)
 		
 		mysql> slave stop;
-	mysql> CHANGE MASTER TO MASTER_HOST = '192.168.188.150', MASTER_USER = 'mogile', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000003', MASTER_LOG_POS = 107; 
+		mysql> CHANGE MASTER TO MASTER_HOST = '192.168.188.150', MASTER_USER = 'mogile', MASTER_PASSWORD = 'password', 			MASTER_LOG_FILE = 'mysql-bin.000003', MASTER_LOG_POS = 107; 
  mysql> slave start;
 		
 		# Lưu ý các chỉ số:    host trỏ tới địa chỉ máy B
@@ -76,7 +76,7 @@ Trên máy A:
 
 
 
-Trên máy B:
+		Trên máy B:
 		mysql> show master status;
 		+------------------------+-----------+---------------------+-------------------------+
 		| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
