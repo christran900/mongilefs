@@ -56,13 +56,13 @@ Tạo database và người dùng tương tự trên cả 2 máy:
 		mysql> FLUSH PRIVILEGES;
 
 Trên máy A:
-		mysql> show master status;
+	        mysql> show master status;
 		+------------------------+-----------+---------------------+-------------------------+
-| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
-+------------------------+-----------+---------------------+-------------------------+
-| mysql-bin.000002 |        107 | mogilefs           |                                |
-+------------------------+-----------+---------------------+-------------------------+
-1 row in set (0.00 sec)
+		| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+		+------------------------+-----------+---------------------+-------------------------+
+		| mysql-bin.000002 |        107 | mogilefs           |                                |
+		+------------------------+-----------+---------------------+-------------------------+
+		1 row in set (0.00 sec)
 		
 		mysql> slave stop;
 	mysql> CHANGE MASTER TO MASTER_HOST = '192.168.188.150', MASTER_USER = 'mogile', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000003', MASTER_LOG_POS = 107; 
@@ -77,13 +77,13 @@ Trên máy A:
 
 
 Trên máy B:
-	mysql> show master status;
+		mysql> show master status;
 		+------------------------+-----------+---------------------+-------------------------+
-| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
-+------------------------+-----------+---------------------+-------------------------+
-| mysql-bin.000003 |        107 | mogilefs           |                                |
-+------------------------+-----------+---------------------+-------------------------+
-1 row in set (0.00 sec)
+		| File                        | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+		+------------------------+-----------+---------------------+-------------------------+
+		| mysql-bin.000003 |        107 | mogilefs           |                                |
+		+------------------------+-----------+---------------------+-------------------------+
+		1 row in set (0.00 sec)
 
 mysql> slave stop;
 	mysql> CHANGE MASTER TO MASTER_HOST = '192.168.188.149', MASTER_USER = 'mogile', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000002', MASTER_LOG_POS = 107; 
