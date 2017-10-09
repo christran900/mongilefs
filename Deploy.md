@@ -95,24 +95,24 @@ Thêm repo:
 		sudo apt-get install python-software-properties 
 sudo add-apt-repository ppa:saz/mogilefs
 
-Update cache và cài đặt:
-sudo apt-get update 
-sudo apt-get install mogilefsd mogstored mogilefs-utils perlbal
+	Update cache và cài đặt:
+	sudo apt-get update 
+	sudo apt-get install mogilefsd mogstored mogilefs-utils perlbal
 
-Tạo file cấu hình và đặt trong /etc/mogilefs/
-sudo dpkg-reconfigure mogilefsd 
-sudo dpkg-reconfigure mogstored
+	Tạo file cấu hình và đặt trong /etc/mogilefs/	
+	sudo dpkg-reconfigure mogilefsd 
+	sudo dpkg-reconfigure mogstored
 
-Sửa file cấu hình /etc/mogilefs/mogilefsd.conf
-db_user = mogile
-db_pass = password
+	Sửa file cấu hình /etc/mogilefs/mogilefsd.conf
+	db_user= mogile
+	db_pass = password
 
-Thực thi lệnh sau:
-mogdbsetup --dbhost=localhost --dbname=mogilefs --dbuser=mogile --dbpassword=password
+	Thực thi lệnh sau:
+	mogdbsetup --dbhost=localhost --dbname=mogilefs --dbuser=mogile --dbpassword=password
 
-Khởi động
-sudo /etc/init.d/mogilefsd start 
-sudo /etc/init.d/mogstored start
+	Khởi động
+	sudo /etc/init.d/mogilefsd start 
+	sudo /etc/init.d/mogstored start
 
 Để kiểm tra ta vào mysql sau đó show tables in mogilefs, trên cả 2 máy sẽ thấy các bảng của mogilefs đã tạo ra.
 
